@@ -1,0 +1,59 @@
+#head {
+
+}
+
+#searchbar {
+	 float:right; 
+	 position: absolute;
+	 top: 40px; 
+	 right: 10px;	
+}
+
+ul  { 
+	display: inline;
+	list-style-type: none;
+	float: left;
+	width:400px; 
+	height:100%; 
+	padding-right:20px; 
+	border:0px; 
+	background-color: white; 
+	}
+	
+li {
+	display: inline;
+}
+
+
+
+.content {
+	clear: left;
+	background-color: brown;
+	margin-right: 325px;
+	border-color: brown;
+	border-width: 5px;
+	border-style: solid;
+	width: 100px;
+	heigth: 80px;
+}
+
+#sidebar {
+	float: right;
+	width: 325px;
+	background-color: brown;
+	border-color: brown;
+	border-width: 5px;
+	border-style: solid;
+}
+
+#footer {
+	clear: both;
+	position: fixed;
+	alignment: center;
+	background-color: brown;
+}
+body {
+	background-color: white;
+}
+
+	
