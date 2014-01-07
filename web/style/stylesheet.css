@@ -4,8 +4,8 @@
 #searchbar {
 	 float:right; 
 	 position: absolute;
-	 top: 40px; 
-	 right: 10px;	
+	 margin-top: 50px; 
+	 margin-left: 740px;	
 }
 
 ul  { 
@@ -21,6 +21,12 @@ ul  {
 	
 li {
 	display: inline;
+}
+
+.menuLeft {
+	position: absolute;
+	margin-left: 150px;
+	margin-top: 118px;
 }
 
 #iFrames {
