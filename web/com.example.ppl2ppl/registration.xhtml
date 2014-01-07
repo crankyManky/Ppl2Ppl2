@@ -19,26 +19,48 @@
 </h:head>
 <h:body>
 	<h:form prependId="false">
+	<h:panelGrid columns="2"
+		columnClasses="rightAlign, leftAlign">
 		<h1>Welcome to the Registration!</h1>
-			Fill in your information, and we will get back to you!<br />
+			Please fill in your information<br />
 		<br />
-			Your prename: 
+		<h:outputText value="prename: "></h:outputText>
 		<h:inputText id="preNameText"
-			value="#{Registration.preName}" />
-		<br />
-			Your name: 
-		<h:inputText id="nameText" value="#{Registration.name}"
-			converterMessage="Your age must be a number."
+			value="#{Registration.preName}"
+			converterMessage="Your prename must be a String."
 			showSummary="true" />
-		<h:message for="ageNo" />
 		<br />
-			Your galactic e-mail: 
-		<h:inputText id="emailText"
-			value="#{bountyHunter.email}" />
+		<h:outputText value="name: "></h:outputText>
+		<h:inputText id="nameText" value="#{Registration.name}"
+			converterMessage="Your name must be a String."
+			showSummary="true" />
+		<h:message for="nameNo" />
 		<br />
-			Date when this submission was done: 
-		<h:inputText id="dateText"
-			value="#{bountyHunter.entryDate}" />
+		<h:outputText value="e-mail: "></h:outputText> 
+		<h:inputText id="mailText"
+			value="#{Registration.mail}" />
+		<br />
+		<h:outputText value="password: "></h:outputText> 
+		<h:inputText id="passwordText"
+			value="#{Registration.password}" />
+		<br />
+		<h:outputText value="street: "></h:outputText> 
+		<h:inputText id="streetText"
+			value="#{Registration.street}" />
+		<br />
+		<h:outputText value="zip: "></h:outputText> 
+		<h:inputText id="zipText"
+			value="#{Registration.zip}" />
+		<br />
+		<h:outputText value="city: "></h:outputText> 
+		<h:inputText id="cityText"
+			value="#{Registration.city}" />
+		<br />
+		<h:outputText value="country: "></h:outputText> 
+		<h:inputText id="countryText"
+			value="#{Registration.country}" />
+		<br />
+		</h:panelGrid>
 		<br />
 		<h:commandButton value="Send it away!" action="thankYou" />
 		</h:form>

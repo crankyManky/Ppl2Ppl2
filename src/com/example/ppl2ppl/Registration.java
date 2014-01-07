@@ -7,10 +7,10 @@ public class Registration{
 	private int idUser;
 	private String preName;
 	private String name;
-	private char mail;
-	private char password;
-	private char street;
-	private char zip;
+	private String mail;
+	private String password;
+	private String street;
+	private String zip;
 	private String city;
 	private String country;
 	private Date regDate;
@@ -69,7 +69,7 @@ public class Registration{
 	/** 
 	 * @return mail
 	 */
-	public char getMail() {
+	public String getMail() {
 		return mail;
 	}
 
@@ -77,14 +77,14 @@ public class Registration{
 	 * This method sets the mail-adress
 	 * @param mail
 	 */
-	public void setMail(char mail) {
+	public void setMail(String mail) {
 		this.mail = mail;
 	}
 
 	/**
 	 * @return password
 	 */
-	public char getPassword() {
+	public String getPassword() {
 		return password;
 	}
 
@@ -92,14 +92,14 @@ public class Registration{
 	 * This method sets the password
 	 * @param password
 	 */
-	public void setPassword(char password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 
 	/**
 	 * @return street
 	 */
-	public char getStreet() {
+	public String getStreet() {
 		return street;
 	}
 
@@ -107,14 +107,14 @@ public class Registration{
 	 * This method sets the street
 	 * @param street
 	 */
-	public void setStreet(char street) {
+	public void setStreet(String street) {
 		this.street = street;
 	}
 
 	/**
 	 * @return zip
 	 */
-	public char getZip() {
+	public String getZip() {
 		return zip;
 	}
 
@@ -122,7 +122,7 @@ public class Registration{
 	 * This method sets the zip
 	 * @param zip
 	 */
-	public void setZip(char zip) {
+	public void setZip(String zip) {
 		this.zip = zip;
 	}
 
@@ -155,4 +155,22 @@ public class Registration{
 	public void setCountry(String country) {
 		this.country = country;
 	}
+
+	/**
+	 * @return regDate
+	 */
+	public Date getRegDate() {
+		return regDate;
+	}
+
+	/**
+	 * This method sets the regDate
+	 * @param regDate
+	 */
+	public void setRegDate(Date regDate) {
+		this.regDate = regDate;
+	}
+	
+	
 }
+
