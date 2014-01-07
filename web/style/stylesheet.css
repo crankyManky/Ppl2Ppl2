@@ -28,19 +28,26 @@ li {
 }
 
 #leftIFrame {
-	float:left;
-	left: 10px;
-	top:100px;
-	width:45%;
+	position:  absolute;
+	margin-top: 150px;
+	margin-left: 150px;
+	width:400px;
+	height: 50%;
+	scrolling: yes;
+	
 }
 
 #rightIFrame {
-	float:right;
-	right:10px;
-	top:100px;
-	width:45%;
+	position: absolute;
+	margin-top: 150px;
+	margin-left: 600px ;
+	width:400px;
+	height: 50%;
 	overflow: hidden;
+	scrolling: yes;
+	
 }
+
 
 #tabNavi{
 	 background-color: #F7FFC3;        /* Hintergrundfarbe für die Navigation */
