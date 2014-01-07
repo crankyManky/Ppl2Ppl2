@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Registration</title>
+	<!-- jQuery library (served from Google) -->
+	<script
+		src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	
+	<!-- bxSlider Javascript file -->
+	<script src="../slider/jquery.bxslider.min.js"></script>
+	<!-- bxSlider CSS file -->
+	<link href="../slider/jquery.bxslider.css" rel="stylesheet" />
+	<link href="../style/stylesheet.css" type="text/css" rel="Stylesheet" />
+</h:head>
+<h:body>
+	<h:form prependId="false">
+		<h1>Welcome to the Registration!</h1>
+			Fill in your information, and we will get back to you!<br />
+		<br />
+			Your prename: 
+		<h:inputText id="preNameText"
+			value="#{Registration.preName}" />
+		<br />
+			Your name: 
+		<h:inputText id="nameText" value="#{Registration.name}"
+			converterMessage="Your age must be a number."
+			showSummary="true" />
+		<h:message for="ageNo" />
+		<br />
+			Your galactic e-mail: 
+		<h:inputText id="emailText"
+			value="#{bountyHunter.email}" />
+		<br />
+			Date when this submission was done: 
+		<h:inputText id="dateText"
+			value="#{bountyHunter.entryDate}" />
+		<br />
+		<h:commandButton value="Send it away!" action="thankYou" />
+		</h:form>
+</h:body>
+</html>
