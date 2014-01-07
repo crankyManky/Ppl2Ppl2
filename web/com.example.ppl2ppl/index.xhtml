@@ -5,109 +5,128 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
-	
+
 <h:head>
-	
+
 	<!-- jQuery library (served from Google) -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script
+		src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<!-- bxSlider Javascript file -->
 	<script src="../slider/jquery.bxslider.min.js"></script>
 	<!-- bxSlider CSS file -->
 	<link href="../slider/jquery.bxslider.css" rel="stylesheet" />
 
-    <link href="../style/stylesheet.css" type="text/css" rel="Stylesheet"/>
-  
-		
-	<a href="index.html"><img src="../images/LogoP2P.png" width="200" height="80" alt="logo" style="height: 68px; "></img></a>
-	
+	<link href="../style/stylesheet.css" type="text/css" rel="Stylesheet" />
+
+
+	<a href="index.html"><img src="../images/LogoP2P.png" width="200"
+		height="80" alt="logo" style="height: 68px;"></img></a>
+
 	<form method="post" action="" id="searchbar">
-	 <input class="textfield" type="text" name="searchString" size="35" maxlength="30" />
-		<input class="button" type="submit" name="startSearch" value="search" /> 
-	</form> 
-	
+		<input class="textfield" type="text" name="searchString" size="35"
+			maxlength="30" /> <input class="button" type="submit"
+			name="startSearch" value="search" />
+	</form>
+
 </h:head>
 <h:body>
 
 	<div class="reiterteaser">
-    <ul class="tabs" id="tabNavi">
-        <li class="active">Home</li>
-        	<span class="linkDivider"> | </span>
-        <li>Projects</li>
-        	<span class="linkDivider"> | </span>
-        <li>About</li>
-        	<span class="linkDivider"> | </span>
-        <li>Forum</li>
-        	<span class="linkDivider"> | </span>
-        <li>Account</li>
-    </ul>
-    <div class="content">
-        <div class="box">1</div>
-        <div class="box" id="project" >
- 
-        
-       <ul class="bxslider">
-  <li><img src="/images/pic1.jpg" /></li>
-  <li><img src="/images/pic2.jpg" /></li>
-  <li><img src="/images/pic3.jpg" /></li>
-  <li><img src="/images/pic4.jpg" /></li>
-</ul>
-        
-        </div>
-        
-        
-        
-        <div class="box" style="display: none;">3</div>
-        <div class="box" style="display: none;">4</div>
-        <div class="box" style="display: none;">5</div>
-    </div>
-    <div class="next"></div><div class="prev"></div>
-</div>
+		<ul class="tabs" id="tabNavi">
+			<li class="active">Home</li>
+			<span class="linkDivider"> | </span>
+			<li>Projects</li>
+			<span class="linkDivider"> | </span>
+			<li>About</li>
+			<span class="linkDivider"> | </span>
+			<li>Forum</li>
+			<span class="linkDivider"> | </span>
+			<li>Account</li>
+		</ul>
+		<div class="content">
+			<div class="box">1</div>
+			<div class="box" id="project">
 
-	
-	
+
+				<ul class="bxslider">
+					<li><img src="/images/pic1.jpg" /></li>
+					<li><h:form prependId="false">
+							<h1>Welcome to the Registration!</h1>
+Fill in your information, and we will get back to you!<br />
+							<br />
+Your prename: <h:inputText id="preNameText" value="#{Registration.preName}" />
+							<br />
+Your name: <h:inputText id="nameText" value="#{Registration.name}"
+								converterMessage="
+Your age must be a number."
+								showSummary="true" />
+							<h:message for="ageNo" />
+							<br />
+Your galactic e-mail: <h:inputText id="emailText"
+								value="#{bountyHunter.email}" />
+							<br />
+Date when this submission was done: <h:inputText id="dateText"
+								value="#{
+bountyHunter.entryDate}" />
+							<br />
+							<h:commandButton value="Send it away!" action="thankYou" />
+						</h:form></li>
+					<li><img src="/images/pic3.jpg" /></li>
+					<li><img src="/images/pic4.jpg" /></li>
+				</ul>
+
+			</div>
+
+
+
+			<div class="box" style="display: none;">3</div>
+			<div class="box" style="display: none;">4</div>
+			<div class="box" style="display: none;">5</div>
+		</div>
+		<div class="next"></div>
+		<div class="prev"></div>
+	</div>
+
+
+
 	<h:form id="sidebar">
 	,xcksxkcLsc
-	</h:form> 
-		<script type="text/javascript"> <!-- komisches Zeugs stehen lassen, da sonst JS nicht akzeptiert wird! -->
+	</h:form>
+	<script type="text/javascript">
+	<!-- komisches Zeugs stehen lassen, da sonst JS nicht akzeptiert wird! -->
 		/* <![CDATA[ */
-		
-			$(document).ready(function(){
- 			 $('.bxslider').bxSlider();
-			});
 
-			console.log("bla");
-			var tabs = ".tabs li";
-			var activeclass = "active";
+		$(document).ready(function() {
+			$('.bxslider').bxSlider();
+		});
 
-				$(tabs).click(
-						/* statt "click" kann auch "hover" verwendet werden */
-						function() {
-							$(this).siblings().removeClass(activeclass);
-							$(this).addClass(activeclass);
-							$(this).parent().next(".content").find(".box")
-									.hide().eq($(this).index()).show();
-							$(".reiterteaser").append("<div class='inhalt'> blubb </div>");
-						
-						});
-						
-				 $('#project').flexslider();		
-				
+		console.log("bla");
+		var tabs = ".tabs li";
+		var activeclass = "active";
+
+		$(tabs).click(
+				/* statt "click" kann auch "hover" verwendet werden */
+				function() {
+					$(this).siblings().removeClass(activeclass);
+					$(this).addClass(activeclass);
+					$(this).parent().next(".content").find(".box").hide().eq(
+							$(this).index()).show();
+					$(".reiterteaser").append(
+							"<div class='inhalt'> blubb </div>");
+
+				});
+
+		$('#project').flexslider();
+
 		/* ]]> */
 	</script>
 	<div class="Footer" id="footer">
-	<a href=""></a>
-	Imprint
-		
-	<span class="linkDivider"> | </span>
-	<a href=""></a>
-	Contact
-		
-	<span class="linkDivider"> | </span>
-	<a href=""></a>
-	Log In
-	
+		<a href=""></a> Imprint <span class="linkDivider"> | </span> <a
+			href=""></a> Contact <span class="linkDivider"> | </span> <a href=""></a>
+		Log In
+
 	</div>
-	
+
 </h:body>
 
 </html>
