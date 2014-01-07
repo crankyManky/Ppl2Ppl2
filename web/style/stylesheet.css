@@ -23,11 +23,6 @@ li {
 	display: inline;
 }
 
-.menuLeft {
-	position: absolute;
-	margin-left: 150px;
-	margin-top: 118px;
-}
 
 #iFrames {
 	widht:100%
@@ -56,12 +51,21 @@ li {
 
 
 #tabNavi{
-	 background-color: #F7FFC3;        /* Hintergrundfarbe für die Navigation */
- 	 padding: 4px 0;                   /* Innenabstand: oben/unten 4px, li/re 0 */
- 	 border-top: 3px solid #668BCC;    /* Rahmenlinie oben */
- 	 border-bottom: 3px solid #668BCC; /* Rahmenlinie unten */
+	 background-color: #ECF3EE;        /* Hintergrundfarbe für die Navigation */
+ 	 padding: 5px 0;                   /* Innenabstand: oben/unten 4px, li/re 0 */
+ 	 border-top: 3px solid #9B5D2E;    /* Rahmenlinie oben */
+ 	 border-bottom: 3px solid #9B5D2E; /* Rahmenlinie unten */
+ 	 border: 2px groove #9B5D2E;
  	 margin: 0; 
 }
+
+.menuLeft {
+	position: absolute;
+	margin-left: 150px;
+	margin-top: 115px;
+	width: 400px;
+}
+
 
 .content {
 	background-color: brown;
