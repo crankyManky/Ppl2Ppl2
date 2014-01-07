@@ -1,3 +1,4 @@
+package com.example.ppl2ppl;
 
 public class Registration{
 	

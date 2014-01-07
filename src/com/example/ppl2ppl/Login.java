@@ -1,14 +1,14 @@
+package com.example.ppl2ppl;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-@ManagedBean(name = "login")
-@SessionScoped
+@ManagedBean
 public class Login {
 
-	private String userName;
+	final String userName = "Peter";
 	private String password;
 	ResultSet rs = null;
 	ResultSet rs1 = null;
@@ -29,13 +29,7 @@ public class Login {
 		return userName;
 	}
 
-	/**
-	 * This method sets the userName
-	 * @param username          
-	 */
-	public void setUsername(String userName) {
-		this.userName = userName;
-	}
+	
 
 	/**
 	 * @return password

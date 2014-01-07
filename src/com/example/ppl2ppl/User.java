@@ -1,3 +1,4 @@
+package com.example.ppl2ppl;
 /*
  * This class represent a User
  */
