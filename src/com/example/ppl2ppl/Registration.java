@@ -1,5 +1,7 @@
 package com.example.ppl2ppl;
 
+import java.sql.Date;
+
 public class Registration{
 	
 	private int idUser;
@@ -11,6 +13,7 @@ public class Registration{
 	private char zip;
 	private String city;
 	private String country;
+	private Date regDate;
 	
 	/**
 	 * Creates a new Instance of Registration
