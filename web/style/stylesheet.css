@@ -1,5 +1,4 @@
 #head {
-
 }
 
 #searchbar {
@@ -24,11 +23,23 @@ li {
 	display: inline;
 }
 
-.reiterteaser {
-	position:absolute;
+#iFrames {
+	widht:100%
+}
+
+#leftIFrame {
 	float:left;
 	left: 10px;
-	top:70px;
+	top:100px;
+	width:45%;
+}
+
+#rightIFrame {
+	float:right;
+	right:10px;
+	top:100px;
+	width:45%;
+	overflow: hidden;
 }
 
 #tabNavi{
@@ -44,7 +55,7 @@ li {
 	margin-left: 400px;
 }
 
-#sidebar {
+#rightSide {
 	float: right;
 	width: 400px;
 	position: absolute;

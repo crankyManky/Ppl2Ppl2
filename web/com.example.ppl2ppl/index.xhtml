@@ -1,109 +1,85 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-<h:head>
-	<title>People 2 People</title>
+	<h:head>
+		<title>People 2 People</title>
 	
-	<!-- jQuery library (served from Google) -->
-	<script
-		src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-	
-	<!-- bxSlider Javascript file -->
-	<script src="../slider/jquery.bxslider.min.js"></script>
-	<!-- bxSlider CSS file -->
-	<link href="../slider/jquery.bxslider.css" rel="stylesheet" />
-
-	<!-- external stylesheet -->
-	<link href="../style/stylesheet.css" type="text/css" rel="Stylesheet" />
-	
-	
-	<script type="text/javaScript">
-	
-	<!-- komisches Zeugs stehen lassen, da sonst JS nicht akzeptiert wird! -->
-	/* <![CDATA[ */
-
-	$(document).ready(function() {
-	    $('.bxslider').bxSlider();
-	});
-
-	console.log("bla");
-	var tabs = ".tabs li";
-	var activeclass = "active";
-
-	/* $(tabs).click(
-		/* statt "click" kann auch "hover" verwendet werden */
-	/*	function() {
-		    $(this).siblings().removeClass(activeclass);
-		    $(this).addClass(activeclass);
-		    $(this).parent().next(".content").find(".box").hide().eq(
-			    $(this).index()).show();
-		    $(".reiterteaser").append(
-			    "<div class='inhalt'> blubb </div>");
-
-		}); */
-
-	/* ]]> */	
-	
-		function changeLeft(loc){
-    		document.getElementById('left').src = loc;
-		}
-
-		function changeRight(loc){
-			document.getElementById('right').src = loc;
-		}
-	</script>
-
-</h:head>
-<h:body>
-
-	<!--  upper part -->
-	<a href="index.html"><img src="../images/LogoP2P.png" width="200"
-		height="80" alt="logo" style="height: 68px;"></img></a>
-
-	<form method="post" action="" id="searchbar">
-		<input class="textfield" type="text" name="searchString" size="35"
-			maxlength="30" /> <input class="button" type="submit"
-			name="startSearch" value="search" />
-	</form>
-	
-	
-	<!-- Left side -->
-	<div class="reiterteaser">
-		<ul class="tabs" id="tabNavi">
-			<li class="active">Home</li>
-			<span class="linkDivider"> | </span>
-			<li><a href="#" onclick="go(projects.xhtml)">Projects</a></li>
-			<span class="linkDivider"> | </span>
-			<li>About</li>
-			<span class="linkDivider"> | </span>
-			<li>Forum</li>
-			<span class="linkDivider"> | </span>
-			<li><a href="javascript:go(registration.xhtml)">Account</a></li>
-		</ul>
-		<iframe src="about:blank" id="left"></iframe>	
-	</div>
-	
-
-	<!-- Right side -->
-	<h:form id="sidebar">
-		<iframe src="about:blank" id="right"></iframe>
-	</h:form>
-
-	<div class="Footer" id="footer">
-		<a href="">Imprint</a>  
-		<span class="linkDivider"> | </span> 
-		<a href="">Contact</a>  
-		<span class="linkDivider"> | </span> 
-		<a href="">Log In</a>
+		<!-- jQuery library (served from Google) -->
+		<script
+			src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		
+		<!-- bxSlider Javascript file -->
+		<script src="../slider/jquery.bxslider.min.js"></script>
+		<!-- bxSlider CSS file -->
+		<link href="../slider/jquery.bxslider.css" rel="stylesheet" />
 
-	</div>
+		<!-- external stylesheet -->
+		<link href="../style/stylesheet.css" type="text/css" rel="Stylesheet" />
+		
+		<script type="text/javaScript">
+		console.log("bla");
+		var tabs = ".tabs li";
+		var activeclass = "active";
 
-</h:body>
+		/* $(tabs).click(
+			/* statt "click" kann auch "hover" verwendet werden */
+		/*	function() {
+			    $(this).siblings().removeClass(activeclass);
+			    $(this).addClass(activeclass);
+			    $(this).parent().next(".content").find(".box").hide().eq(
+			    $(this).index()).show();
+			    $(".reiterteaser").append(
+				    "<div class='inhalt'> blubb </div>");
 
+			}); */
+
+			function changeLeft(loc){
+    			document.getElementById('left').src = loc;
+			}
+
+			function changeRight(loc){
+				document.getElementById('right').src = loc;
+			}
+		</script>
+	</h:head>
+	<h:body>
+
+		<!--  upper part -->
+		<a href="index.html"><img src="../images/LogoP2P.png" width="200"
+			height="80" alt="logo" style="height: 68px;"></img></a>
+	
+		<form method="post" action="" id="searchbar">
+			<input class="textfield" type="text" name="searchString" size="35"
+				maxlength="30" /> <input class="button" type="submit"
+				name="startSearch" value="search" />
+		</form>
+	
+		
+		<h:form id="iFrames">
+		<!-- Left side -->
+			<iframe src="projects.xhtml" id="leftIFrame" name="leftIFrame">
+				<p>No i-frame possible with this browser</p>
+			</iframe>
+		
+		<!-- Right side -->
+			<iframe src="registration.xhtml" id="rightIFrame" name="rightIFrame">
+				<p>No i-frame possible with this browser</p>
+			</iframe>
+		</h:form>
+
+		<footer id="footer">
+			<a href="">Imprint</a>  
+			<span class="linkDivider"> | </span> 
+			<a href="">Contact</a>  
+			<span class="linkDivider"> | </span> 
+			<a href="">Log In</a>
+		</footer>
+
+	</h:body>
 </html>
