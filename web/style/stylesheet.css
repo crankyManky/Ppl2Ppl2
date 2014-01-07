@@ -55,6 +55,12 @@ li {
 	margin-left: 400px;
 }
 
+#contentLeft{
+	position:relative;
+	margin: 10px;
+	top: 50px;
+}
+
 #rightSide {
 	float: right;
 	width: 400px;

@@ -7,52 +7,35 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
 	<title>Projects</title>
-	
-	
+
+
 	<!-- jQuery library (served from Google) -->
 	<script
 		src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-	
+
 	<!-- bxSlider Javascript file -->
 	<script src="../slider/jquery.bxslider.min.js"></script>
 	<!-- bxSlider CSS file -->
 	<link href="../slider/jquery.bxslider.css" rel="stylesheet" />
-	<link href="../style/stylesheet.css" type="text/css" rel="Stylesheet" />
-	
-	<script type="text/javascript">
-	/* <![CDATA[ */
+	<!-- external stylesheet -->
+	<link href="../style/stylesheet.css" type="text/css" rel="stylesheet" />
 
+	<script type="text/javascript">
 	$(document).ready(function() {
 	    $('.bxslider').bxSlider();
 	});
-	
-	/* ]]> */
-	</script>
+
+    </script>
 </h:head>
 <h:body>
-
-	<div class="reiterteaser">
-		<ul class="tabs" id="tabNavi">
-			<li class="active">Home</li>
-			<span class="linkDivider"> | </span>
-			<li><a href="#" onclick="changeLeft(projects.xhtml)">Projects</a></li>
-			<span class="linkDivider"> | </span>
-			<li>About</li>
-			<span class="linkDivider"> | </span>
-			<li>Forum</li>
-			<span class="linkDivider"> | </span>
-			<li><a href="javascript:changeRight(registration.xhtml)">Account</a></li>
-		</ul>			
-	</div>
-	<div class="content">
-			<ul class="bxslider">
-				<li>
-					<h:form >
-						Hello!
-						</h:form>
-					</li>
-				</ul>
-		</div>
 	
+	<div id="contentLeft">
+		<ul class="bxslider">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+	</div>
+
 </h:body>
 </html>

@@ -40,11 +40,11 @@
 			}); */
 
 			function changeLeft(loc){
-    			document.getElementById('left').src = loc;
+    			document.getElementById('leftIFrame').src = loc;
 			}
 
 			function changeRight(loc){
-				document.getElementById('right').src = loc;
+				document.getElementById('rightIFrame').src = loc;
 			}
 		</script>
 	</h:head>
@@ -60,7 +60,19 @@
 				name="startSearch" value="search" />
 		</form>
 	
-		
+		<div class="menuLeft">
+		<ul class="tabs" id="tabNavi">
+			<li class="active">Home</li>
+			<span class="linkDivider"> | </span>
+			<li><a href="#" onclick="changeLeft('projects.xhtml')">Projects</a></li>
+			<span class="linkDivider"> | </span>
+			<li><a href="#" onclick="changeLeft('about.xhtml')">About</a></li>
+			<span class="linkDivider"> | </span>
+			<li><a href="#" onclick="changeLeft('forum.xhtml')">Forum</a></li>
+			<span class="linkDivider"> | </span>
+			<li><a href="#" onclick="changeLeft('registration.xhtml')">Account</a></li>
+		</ul>
+	</div>
 		<h:form id="iFrames">
 		<!-- Left side -->
 			<iframe src="projects.xhtml" id="leftIFrame" name="leftIFrame">
