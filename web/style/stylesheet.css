@@ -24,34 +24,33 @@ li {
 	display: inline;
 }
 
-
+#tabNavi{
+	 background-color: #F7FFC3;        /* Hintergrundfarbe für die Navigation */
+ 	 padding: 4px 0;                   /* Innenabstand: oben/unten 4px, li/re 0 */
+ 	 border-top: 3px solid #668BCC;    /* Rahmenlinie oben */
+ 	 border-bottom: 3px solid #668BCC; /* Rahmenlinie unten */
+ 	 margin: 0; 
+}
 
 .content {
-	clear: left;
 	background-color: brown;
-	margin-right: 325px;
-	border-color: brown;
-	border-width: 5px;
-	border-style: solid;
-	width: 100px;
-	heigth: 80px;
+	margin-left: 400px;
 }
 
 #sidebar {
 	float: right;
-	width: 325px;
+	width: 400px;
 	background-color: brown;
-	border-color: brown;
-	border-width: 5px;
-	border-style: solid;
 }
 
 #footer {
-	clear: both;
-	position: fixed;
-	alignment: center;
-	background-color: brown;
+    clear:left;
+    margin-top:1em;
+    background:#efefef;
+    text-align:center;
+    padding:10px;
 }
+
 body {
 	background-color: white;
 }
