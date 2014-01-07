@@ -32,8 +32,8 @@ li {
 	position:  absolute;
 	margin-top: 150px;
 	margin-left: 150px;
-	width:400px;
-	height: 50%;
+	width:600px;
+	height: 70%;
 	scrolling: yes;
 	
 }
@@ -41,9 +41,9 @@ li {
 #rightIFrame {
 	position: absolute;
 	margin-top: 150px;
-	margin-left: 600px ;
-	width:400px;
-	height: 50%;
+	margin-left: 800px ;
+	width:300px;
+	height: 70%;
 	overflow: hidden;
 	scrolling: yes;
 	
