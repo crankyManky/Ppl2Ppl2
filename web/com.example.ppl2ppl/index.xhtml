@@ -23,21 +23,6 @@
 		<link href="../style/stylesheet.css" type="text/css" rel="Stylesheet" />
 		
 		<script type="text/javaScript">
-		console.log("bla");
-		var tabs = ".tabs li";
-		var activeclass = "active";
-
-		/* $(tabs).click(
-			/* statt "click" kann auch "hover" verwendet werden */
-		/*	function() {
-			    $(this).siblings().removeClass(activeclass);
-			    $(this).addClass(activeclass);
-			    $(this).parent().next(".content").find(".box").hide().eq(
-			    $(this).index()).show();
-			    $(".reiterteaser").append(
-				    "<div class='inhalt'> blubb </div>");
-
-			}); */
 
 			function changeLeft(loc){
     			document.getElementById('leftIFrame').src = loc;
@@ -72,17 +57,17 @@
 			<span class="linkDivider"> | </span>
 			<li><a href="#" onclick="changeLeft('forum.xhtml')">Forum</a></li>
 			<span class="linkDivider"> | </span>
-			<li><a href="#" onclick="changeLeft('registration.xhtml')">Account</a></li>
+			<li><a href="#" onclick="changeLeft('account.xhtml')">Account</a></li>
 		</ul>
 	</div>
 		<h:form id="iFrames">
 		<!-- Left side -->
-			<iframe src="projects.xhtml" id="leftIFrame" name="leftIFrame">
+			<iframe src="home.xhtml" id="leftIFrame" name="leftIFrame">
 				<p>No i-frame possible with this browser</p>
 			</iframe>
 		
 		<!-- Right side -->
-			<iframe src="registration.xhtml" id="rightIFrame" name="rightIFrame">
+			<iframe src="donation.xhtml" id="rightIFrame" name="rightIFrame">
 				<p>No i-frame possible with this browser</p>
 			</iframe>
 		</h:form>
