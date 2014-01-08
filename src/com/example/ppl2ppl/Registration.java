@@ -7,21 +7,32 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 
 @ManagedBean
 @RequestScoped
 public class Registration {
 
+	@ManagedProperty(value="#{idUser}")
 	private int idUser;
+	@ManagedProperty(value="#{preName}")
 	private String preName;
+	@ManagedProperty(value="#{name}")
 	private String name;
+	@ManagedProperty(value="#{mail}")
 	private String mail;
+	@ManagedProperty(value="#{password}")
 	private String password;
+	@ManagedProperty(value="#{street}")
 	private String street;
+	@ManagedProperty(value="#{zip}")
 	private String zip;
+	@ManagedProperty(value="#{city}")
 	private String city;
+	@ManagedProperty(value="#{country}")
 	private String country;
+	@ManagedProperty(value="#{regDate}")
 	private Date regDate;
 
 	/**
@@ -183,26 +194,31 @@ public class Registration {
 
 	/**
 	 * This method sets the regDate
-	 * 
 	 * @param regDate
 	 */
 	public void setRegDate(Date regDate) {
 		this.regDate = regDate;
 	}
 
+	/**
+	 * This method adds the data into the database
+	 * @return
+	 */
 	public String sendInfosToDB() {
 		System.out.println("bin ich drin?");
 
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 		int i = 0;
+		System.out.println(dateFormat);
 
-		if (idUser != 0) {
+		if (idUser == 0) {
 			PreparedStatement ps = null;
 			Connection connect = null;
 			try {
+				System.out.println("Im Try-Block");
 				Class.forName("com.mysql.jdbc.Driver");
 				connect = DriverManager
-						.getConnection("jdbc:mysql://localhost:3306/Database",
+						.getConnection("jdbc:mysql://localhost:3306/ppl2ppldb",
 								"root", "admin");
 				String sql = "INSERT INTO user(idUser, prename, name, mail, password, street, zip, city, country, regDate) VALUES(?,?,?,?)";
 				ps = connect.prepareStatement(sql);

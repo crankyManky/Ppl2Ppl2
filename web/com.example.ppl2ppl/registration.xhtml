@@ -34,7 +34,6 @@
 		<h:inputText id="nameText" value="#{registration.name}"
 			converterMessage="Your name must be a String."
 			showSummary="true" />
-		<h:message for="nameNo" />
 		<br />
 		<h:outputText value="e-mail: "></h:outputText> 
 		<h:inputText id="mailText"
@@ -62,7 +61,7 @@
 		<br />
 		</h:panelGrid>
 		<br />
-		<h:commandButton value="Submit" action="#{registration.sendInfosToDB}" />
+		<h:commandButton action="#{registration.sendInfosToDB}" value="Submit"  />
 		</h:form>
 </h:body>
 </html>
