@@ -1,9 +1,18 @@
 package com.example.ppl2ppl;
 
 import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 
-public class Registration{
-	
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
+
+@ManagedBean
+@RequestScoped
+public class Registration {
+
 	private int idUser;
 	private String preName;
 	private String name;
@@ -14,22 +23,23 @@ public class Registration{
 	private String city;
 	private String country;
 	private Date regDate;
-	
+
 	/**
 	 * Creates a new Instance of Registration
 	 */
-	public Registration(){
+	public Registration() {
 	}
-	
+
 	/**
 	 * @return idUser
 	 */
 	public int getIdUser() {
 		return idUser;
 	}
-	
+
 	/**
 	 * This method sets the idUser
+	 * 
 	 * @param idUser
 	 */
 	public void setIdUser(int idUser) {
@@ -44,7 +54,8 @@ public class Registration{
 	}
 
 	/**
-	 *This method sets the preName
+	 * This method sets the preName
+	 * 
 	 * @param preName
 	 */
 	public void setPreName(String preName) {
@@ -60,13 +71,14 @@ public class Registration{
 
 	/**
 	 * This method sets the Name
+	 * 
 	 * @param name
 	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	/** 
+	/**
 	 * @return mail
 	 */
 	public String getMail() {
@@ -75,6 +87,7 @@ public class Registration{
 
 	/**
 	 * This method sets the mail-adress
+	 * 
 	 * @param mail
 	 */
 	public void setMail(String mail) {
@@ -90,6 +103,7 @@ public class Registration{
 
 	/**
 	 * This method sets the password
+	 * 
 	 * @param password
 	 */
 	public void setPassword(String password) {
@@ -105,6 +119,7 @@ public class Registration{
 
 	/**
 	 * This method sets the street
+	 * 
 	 * @param street
 	 */
 	public void setStreet(String street) {
@@ -120,6 +135,7 @@ public class Registration{
 
 	/**
 	 * This method sets the zip
+	 * 
 	 * @param zip
 	 */
 	public void setZip(String zip) {
@@ -135,6 +151,7 @@ public class Registration{
 
 	/**
 	 * This method sets the city
+	 * 
 	 * @param city
 	 */
 	public void setCity(String city) {
@@ -150,6 +167,7 @@ public class Registration{
 
 	/**
 	 * This method sets the country
+	 * 
 	 * @param country
 	 */
 	public void setCountry(String country) {
@@ -165,12 +183,70 @@ public class Registration{
 
 	/**
 	 * This method sets the regDate
+	 * 
 	 * @param regDate
 	 */
 	public void setRegDate(Date regDate) {
 		this.regDate = regDate;
 	}
-	
-	
-}
 
+	public String sendInfosToDB() {
+		System.out.println("bin ich drin?");
+
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+		int i = 0;
+
+		if (idUser != 0) {
+			PreparedStatement ps = null;
+			Connection connect = null;
+			try {
+				Class.forName("com.mysql.jdbc.Driver");
+				connect = DriverManager
+						.getConnection("jdbc:mysql://localhost:3306/Database",
+								"root", "admin");
+				String sql = "INSERT INTO user(idUser, prename, name, mail, password, street, zip, city, country, regDate) VALUES(?,?,?,?)";
+				ps = connect.prepareStatement(sql);
+				ps.setInt(1, idUser);
+				ps.setString(2, preName);
+				ps.setString(3, name);
+				ps.setString(4, mail);
+				ps.setString(5, password);
+				ps.setString(6, street);
+				ps.setString(7, zip);
+				ps.setString(8, city);
+				ps.setString(9, country);
+				System.out.println("pushe");
+				if (regDate != null) {
+					String date = dateFormat.format(regDate);
+					Object obj = date;
+					if (obj == null) {
+						ps.setDate(10, null);
+					} else {
+						java.sql.Date dateTime = java.sql.Date
+								.valueOf(new String(date));
+						ps.setDate(10, dateTime);
+					}
+				}
+
+				i = ps.executeUpdate();
+				System.out.println("Data added Successfully");
+			} catch (Exception e) {
+				System.out.println(e);
+			} finally {
+				try {
+					connect.close();
+					ps.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			if (i > 0) {
+				return "output";
+			} else {
+				return "invalid";
+			}
+		} else {
+			return "invalid";
+		}
+	}
+}
