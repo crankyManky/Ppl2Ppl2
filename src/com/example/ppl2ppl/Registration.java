@@ -14,25 +14,25 @@ import javax.faces.bean.RequestScoped;
 @RequestScoped
 public class Registration {
 
-	@ManagedProperty(value="#{idUser}")
+	@ManagedProperty(value = "#{idUser}")
 	private int idUser;
-	@ManagedProperty(value="#{preName}")
+	@ManagedProperty(value = "#{preName}")
 	private String preName;
-	@ManagedProperty(value="#{name}")
+	@ManagedProperty(value = "#{name}")
 	private String name;
-	@ManagedProperty(value="#{mail}")
+	@ManagedProperty(value = "#{mail}")
 	private String mail;
-	@ManagedProperty(value="#{password}")
+	@ManagedProperty(value = "#{password}")
 	private String password;
-	@ManagedProperty(value="#{street}")
+	@ManagedProperty(value = "#{street}")
 	private String street;
-	@ManagedProperty(value="#{zip}")
+	@ManagedProperty(value = "#{zip}")
 	private String zip;
-	@ManagedProperty(value="#{city}")
+	@ManagedProperty(value = "#{city}")
 	private String city;
-	@ManagedProperty(value="#{country}")
+	@ManagedProperty(value = "#{country}")
 	private String country;
-	@ManagedProperty(value="#{regDate}")
+	@ManagedProperty(value = "#{regDate}")
 	private Date regDate;
 
 	/**
@@ -194,6 +194,7 @@ public class Registration {
 
 	/**
 	 * This method sets the regDate
+	 * 
 	 * @param regDate
 	 */
 	public void setRegDate(Date regDate) {
@@ -202,6 +203,7 @@ public class Registration {
 
 	/**
 	 * This method adds the data into the database
+	 * 
 	 * @return
 	 */
 	public String sendInfosToDB() {
@@ -217,9 +219,14 @@ public class Registration {
 			try {
 				System.out.println("Im Try-Block");
 				Class.forName("com.mysql.jdbc.Driver");
-				connect = DriverManager
-						.getConnection("jdbc:mysql://localhost:3306/ppl2ppldb",
-								"root", "admin");
+			} catch (ClassNotFoundException e) {
+				System.out.println("No Driver-Class!");
+				return ("No Driver-Class!");
+			}
+			try {
+				connect = DriverManager.getConnection(
+						"jdbc:mysql://localhost:3306/ppl2ppldb", "root",
+						"admin");
 				String sql = "INSERT INTO user(idUser, prename, name, mail, password, street, zip, city, country, regDate) VALUES(?,?,?,?)";
 				ps = connect.prepareStatement(sql);
 				ps.setInt(1, idUser);
