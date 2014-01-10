@@ -19,11 +19,14 @@
 </h:head>
 <h:body>
 	<h:form prependId="false">
-	<h:panelGrid columns="2"
-		columnClasses="rightAlign, leftAlign">
-		<h1>Welcome to the Registration!</h1>
-			Please fill in your information<br />
+	
+		<h4>Welcome to the Registration!</h4>
 		<br />
+			Please fill in your information:
+		<br />
+		<br />
+		<h:panelGrid columns="3" 
+			columnClasses="rightAlign, leftAlign">
 		<h:outputText value="prename: "></h:outputText>
 		<h:inputText id="preNameText"
 			value="#{registration.preName}"

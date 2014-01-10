@@ -39,7 +39,6 @@ public class Registration {
 
 	/**
 	 * This method adds the data into the database
-	 * 
 	 * @return
 	 */
 	public String sendInfosToDB() {
@@ -76,17 +75,13 @@ public class Registration {
 				ps.setString(8, city);
 				ps.setString(9, country);
 				System.out.println("pushe");
-			//	if (regDate != null) {
 					String date = dateFormat.format(regDate);
 					Object obj = date;
 					if (date.isEmpty()) {
 						ps.setDate(10, null);
 					} else {
-//						java.sql.Date dateTime = java.sql.Date
-//								.valueOf(new String(date));
 						ps.setDate(10, regDate);
 					}
-			//	}
 
 				i = ps.executeUpdate();
 				System.out.println("Data added Successfully");
@@ -109,6 +104,7 @@ public class Registration {
 			return "invalid";
 		}
 	}
+	
 	/**
 	 * @return idUser
 	 */
@@ -262,7 +258,6 @@ public class Registration {
 
 	/**
 	 * This method sets the regDate
-	 * 
 	 * @param regDate
 	 */
 	public void setRegDate(Date regDate) {
