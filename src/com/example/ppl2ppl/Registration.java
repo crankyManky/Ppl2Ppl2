@@ -35,12 +35,80 @@ public class Registration {
 	@ManagedProperty(value = "#{regDate}")
 	private Date regDate;
 
-	/**
-	 * Creates a new Instance of Registration
-	 */
-	public Registration() {
-	}
+	
 
+	/**
+	 * This method adds the data into the database
+	 * 
+	 * @return
+	 */
+	public String sendInfosToDB() {
+		System.out.println("bin ich drin?");
+
+		Date regDate = new Date(System.currentTimeMillis());
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+		int i = 0;
+		System.out.println(dateFormat);
+
+		if (idUser == 0) {
+			PreparedStatement ps = null;
+			Connection connect = null;
+			try {
+				System.out.println("Im Try-Block");
+				Class.forName("com.mysql.jdbc.Driver");
+			} catch (ClassNotFoundException e) {
+				System.out.println("No Driver-Class!");
+				return ("No Driver-Class!");
+			}
+			try {
+				connect = DriverManager.getConnection(
+						"jdbc:mysql://localhost:3306/ppl2ppldb", "root",
+						"admin");																	//regDate?
+				String sql = "INSERT INTO user(idUser, prename, name, mail, password, street, zip, city, country, regDate) VALUES(?,?,?,?,?,?,?,?,?,?)";
+				ps = connect.prepareStatement(sql);
+				ps.setInt(1, idUser);
+				ps.setString(2, preName);
+				ps.setString(3, name);
+				ps.setString(4, mail);
+				ps.setString(5, password);
+				ps.setString(6, street);
+				ps.setString(7, zip);
+				ps.setString(8, city);
+				ps.setString(9, country);
+				System.out.println("pushe");
+			//	if (regDate != null) {
+					String date = dateFormat.format(regDate);
+					Object obj = date;
+					if (date.isEmpty()) {
+						ps.setDate(10, null);
+					} else {
+//						java.sql.Date dateTime = java.sql.Date
+//								.valueOf(new String(date));
+						ps.setDate(10, regDate);
+					}
+			//	}
+
+				i = ps.executeUpdate();
+				System.out.println("Data added Successfully");
+			} catch (Exception e) {
+				System.out.println(e);
+			} finally {
+				try {
+					connect.close();
+					ps.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			if (i > 0) {
+				return "output";
+			} else {
+				return "invalid";
+			}
+		} else {
+			return "invalid";
+		}
+	}
 	/**
 	 * @return idUser
 	 */
@@ -199,77 +267,5 @@ public class Registration {
 	 */
 	public void setRegDate(Date regDate) {
 		this.regDate = regDate;
-	}
-
-	/**
-	 * This method adds the data into the database
-	 * 
-	 * @return
-	 */
-	public String sendInfosToDB() {
-		System.out.println("bin ich drin?");
-
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-		int i = 0;
-		System.out.println(dateFormat);
-
-		if (idUser == 0) {
-			PreparedStatement ps = null;
-			Connection connect = null;
-			try {
-				System.out.println("Im Try-Block");
-				Class.forName("com.mysql.jdbc.Driver");
-			} catch (ClassNotFoundException e) {
-				System.out.println("No Driver-Class!");
-				return ("No Driver-Class!");
-			}
-			try {
-				connect = DriverManager.getConnection(
-						"jdbc:mysql://localhost:3306/ppl2ppldb", "root",
-						"admin");
-				String sql = "INSERT INTO user(idUser, prename, name, mail, password, street, zip, city, country, regDate) VALUES(?,?,?,?)";
-				ps = connect.prepareStatement(sql);
-				ps.setInt(1, idUser);
-				ps.setString(2, preName);
-				ps.setString(3, name);
-				ps.setString(4, mail);
-				ps.setString(5, password);
-				ps.setString(6, street);
-				ps.setString(7, zip);
-				ps.setString(8, city);
-				ps.setString(9, country);
-				System.out.println("pushe");
-				if (regDate != null) {
-					String date = dateFormat.format(regDate);
-					Object obj = date;
-					if (obj == null) {
-						ps.setDate(10, null);
-					} else {
-						java.sql.Date dateTime = java.sql.Date
-								.valueOf(new String(date));
-						ps.setDate(10, dateTime);
-					}
-				}
-
-				i = ps.executeUpdate();
-				System.out.println("Data added Successfully");
-			} catch (Exception e) {
-				System.out.println(e);
-			} finally {
-				try {
-					connect.close();
-					ps.close();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-			if (i > 0) {
-				return "output";
-			} else {
-				return "invalid";
-			}
-		} else {
-			return "invalid";
-		}
 	}
 }
