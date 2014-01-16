@@ -10,6 +10,32 @@ xmlns:f="http://xmlns.jcp.org/jsf/core">
 </h:head>
 <h:body>
 <h:form>
+	Please put your amount in!
+	<br />
+	<br />
+	<h:panelGrid columns="2" columnClasses="rightAlign, leftAlign">
+			<h:outputText value="amount: "> </h:outputText>
+			<h:inputText id="amountText" value="#{donation.amount}"
+			converterMessage="Your amount must be a number." showSummary="true" />
+		<br />
+	</h:panelGrid>
+		<h:outputText value="Choose how you would like to divide up your donation" align="center"> </h:outputText>
+		<br />
+		<br />
+	<h:panelGrid columns="2" columnClasses="rightAlign, leftAlign">	
+		<h:selectOneRadio value="#{donation.oneProject}">
+   			<f:selectItem itemValue="one" itemLabel="single project" />
+   		</h:selectOneRadio>
+   		<h:selectOneRadio value="#{donation.splitDonation}">
+   			<f:selectItem itemValue="more" itemLabel="split donation" />
+   		</h:selectOneRadio>
+   		<br />
+   </h:panelGrid>
+   		
+   		
+   		
+			
+
 </h:form>
 </h:body>
 </html>
