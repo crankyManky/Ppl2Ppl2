@@ -6,19 +6,22 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
+import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
+import javax.inject.Named;
 
-@ManagedBean
-@RequestScoped
+
+@Named
+@SessionScoped
 public class Registration {
 
 	@ManagedProperty(value = "#{idUser}")
 	private int idUser;
-	@ManagedProperty(value = "#{preName}")
+//	@ManagedProperty(value = "#{preName}")
 	private String preName;
-	@ManagedProperty(value = "#{name}")
+//	@ManagedProperty(value = "#{name}")
 	private String name;
 	@ManagedProperty(value = "#{mail}")
 	private String mail;
@@ -76,7 +79,6 @@ public class Registration {
 				ps.setString(9, country);
 				System.out.println("pushe");
 					String date = dateFormat.format(regDate);
-					Object obj = date;
 					if (date.isEmpty()) {
 						ps.setDate(10, null);
 					} else {
