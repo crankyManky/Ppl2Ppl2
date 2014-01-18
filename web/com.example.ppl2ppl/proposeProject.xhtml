@@ -11,13 +11,18 @@
 </h:head>
 <h:body>
 	<h:form>
-		<p>Here you can propose a new Project</p>
+		Propose a new Project! <br/>
+		<h:inputText value="#{fileUpload.title}"/>
+		<h:commandButton value="Send Proposal" action="uploadSuccess"/>
+		
+	</h:form>
+		<!-- <p>Here you can propose a new Project</p>
 		<h:inputText id="title" value="#{fileUpload.title}" required="true"/>
 		<h:inputTextarea id="description" value="#{fileUpload.description}" required="true"/>
 		<h:outputText value="#{fileUpload.title}"/>
 		<o:calendar id="startDate" />
 		<o:calendar id="endDate"/>
-		<h:commandButton id="submit" action="#{fileUpload.propose}" value="Propose Project"/>
-	</h:form>
+		<h:commandButton id="submit" action="#{fileUpload.propose}" value="Propose Project"/>  -->
+	
 </h:body>
 </html>
