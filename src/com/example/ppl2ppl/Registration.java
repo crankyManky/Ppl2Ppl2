@@ -8,10 +8,8 @@ import java.sql.PreparedStatement;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-<<<<<<< HEAD
-=======
 import javax.faces.bean.RequestScoped;
->>>>>>> parent of 5ed0a77... some changes - Donation: new View
+
 
 @ManagedBean
 @RequestScoped
