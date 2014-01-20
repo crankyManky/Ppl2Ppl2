@@ -6,10 +6,10 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
     version="2.1">
     
-    <managed-bean>
+  <!--   <managed-bean>
 	  <managed-bean-name>registration</managed-bean-name>
 	  <managed-bean-class>com.example.ppl2ppl.Registration</managed-bean-class>
 	  <managed-bean-scope>request</managed-bean-scope>
-     </managed-bean>
+    </managed-bean> -->
 
 </faces-config>
