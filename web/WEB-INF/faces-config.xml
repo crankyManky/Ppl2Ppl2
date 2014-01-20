@@ -4,13 +4,20 @@
     xmlns="http://java.sun.com/xml/ns/javaee"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6abae354f6a8855ac6364ed7eb04e81e4827907f
     
     <managed-bean>
 	  <managed-bean-name>registration</managed-bean-name>
 	  <managed-bean-class>com.example.ppl2ppl.Registration</managed-bean-class>
 	  <managed-bean-scope>request</managed-bean-scope>
+<<<<<<< HEAD
     </managed-bean> 
+=======
+    </managed-bean> -->
+>>>>>>> 6abae354f6a8855ac6364ed7eb04e81e4827907f
 
 
 </faces-config>
