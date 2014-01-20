@@ -3,7 +3,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
 @ManagedBean
@@ -21,6 +20,75 @@ public class Login {
 	 * Creates a new instance of login
 	 */
 	public Login() {
+	}
+
+	/**
+	 * @return userName
+	 */
+	public String getUsername() {
+		return userName;
+	}
+
+	
+
+	/**
+	 * @return password
+	 */
+	public String getPassword() {
+		return password;
+	}
+
+	/**
+	 * This method sets the password
+	 * @param password
+	 */
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	/**
+	 * @return dbUserName
+	 */
+	public String getDbUserName() {
+		return dbUserName;
+	}
+
+	/**
+	 * This method sets the dbUserName
+	 * @param dbusername
+	 */
+	public void setDbusername(String dbUserName) {
+		this.dbUserName = dbUserName;
+	}
+
+	/**
+	 * @return dbPassword
+	 */
+	public String getDbPassword() {
+		return dbPassword;
+	}
+
+	/**
+	 * This method sets the dbPassword
+	 * @param dbpassword
+	 */
+	public void setDbPassword(String dbPassword) {
+		this.dbPassword = dbPassword;
+	}
+	
+	/**
+	 * @return dbrole
+	 */
+	public String getDbrole() {
+		return dbRole;
+	}
+
+	/**
+	 * This method sets the dbRole
+	 * @param dbrole
+	 */
+	public void setDbrole(String dbRole) {
+		this.dbRole = dbRole;
 	}
 
 	/**
@@ -84,72 +152,5 @@ public class Login {
 			return "employee";
 		} else
 			return "failure";
-	}
-	
-	/**
-	 * @return userName
-	 */
-	public String getUsername() {
-		return userName;
-	}
-
-	/**
-	 * @return password
-	 */
-	public String getPassword() {
-		return password;
-	}
-
-	/**
-	 * This method sets the password
-	 * @param password
-	 */
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	/**
-	 * @return dbUserName
-	 */
-	public String getDbUserName() {
-		return dbUserName;
-	}
-
-	/**
-	 * This method sets the dbUserName
-	 * @param dbusername
-	 */
-	public void setDbusername(String dbUserName) {
-		this.dbUserName = dbUserName;
-	}
-
-	/**
-	 * @return dbPassword
-	 */
-	public String getDbPassword() {
-		return dbPassword;
-	}
-
-	/**
-	 * This method sets the dbPassword
-	 * @param dbpassword
-	 */
-	public void setDbPassword(String dbPassword) {
-		this.dbPassword = dbPassword;
-	}
-	
-	/**
-	 * @return dbrole
-	 */
-	public String getDbrole() {
-		return dbRole;
-	}
-
-	/**
-	 * This method sets the dbRole
-	 * @param dbrole
-	 */
-	public void setDbrole(String dbRole) {
-		this.dbRole = dbRole;
 	}
 }
