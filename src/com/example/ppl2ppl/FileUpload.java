@@ -7,12 +7,14 @@ import java.util.Date;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
-@Named
-@SessionScoped
 public class FileUpload implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private File file;
-	private String title = "Titel";
+	private String title;
 	private String description;
 	private Date startDate;
 	private Date endDate;

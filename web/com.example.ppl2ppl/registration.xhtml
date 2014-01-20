@@ -25,43 +25,33 @@
 			Please fill in your information:
 		<br />
 		<br />
-		<h:panelGrid columns="3" 
-			columnClasses="rightAlign, leftAlign">
-		<h:outputText value="prename: "></h:outputText>
-		<h:inputText id="preNameText"
-			value="#{registration.preName}"
-			converterMessage="Your prename must be a String."
-			showSummary="true" />
-		<br />
-		<h:outputText value="name: "></h:outputText>
-		<h:inputText id="nameText" value="#{registration.name}"
-			converterMessage="Your name must be a String."
-			showSummary="true" />
-		<br />
-		<h:outputText value="e-mail: "></h:outputText> 
-		<h:inputText id="mailText"
-			value="#{registration.mail}" />
-		<br />
-		<h:outputText value="password: "></h:outputText> 
-		<h:inputText id="passwordText"
-			value="#{registration.password}" />
-		<br />
-		<h:outputText value="street: "></h:outputText> 
-		<h:inputText id="streetText"
-			value="#{registration.street}" />
-		<br />
-		<h:outputText value="zip: "></h:outputText> 
-		<h:inputText id="zipText"
-			value="#{registration.zip}" />
-		<br />
-		<h:outputText value="city: "></h:outputText> 
-		<h:inputText id="cityText"
-			value="#{registration.city}" />
-		<br />
-		<h:outputText value="country: "></h:outputText> 
-		<h:inputText id="countryText"
-			value="#{registration.country}" />
-		<br />
+		<h:panelGrid columns="3" columnClasses="rightAlign, leftAlign">
+			<h:outputText value="prename: "></h:outputText>
+			<h:inputText id="preNameText" value="#{registration.preName}"
+				converterMessage="Your prename must be a String." showSummary="true" />
+			<br />
+			<h:outputText value="name: "></h:outputText>
+			<h:inputText id="nameText" value="#{registration.name}"
+				converterMessage="Your name must be a String." showSummary="true" />
+			<br />
+			<h:outputText value="e-mail: "></h:outputText>
+			<h:inputText id="mailText" value="#{registration.mail}" />
+			<br />
+			<h:outputText value="password: "></h:outputText>
+			<h:inputText id="passwordText" value="#{registration.password}" />
+			<br />
+			<h:outputText value="street: "></h:outputText>
+			<h:inputText id="streetText" value="#{registration.street}" />
+			<br />
+			<h:outputText value="zip: "></h:outputText>
+			<h:inputText id="zipText" value="#{registration.zip}" />
+			<br />
+			<h:outputText value="city: "></h:outputText>
+			<h:inputText id="cityText" value="#{registration.city}" />
+			<br />
+			<h:outputText value="country: "></h:outputText>
+			<h:inputText id="countryText" value="#{registration.country}" />
+			<br />
 		</h:panelGrid>
 		<br />
 		<h:commandButton action="#{registration.sendInfosToDB}" value="Submit"  />
