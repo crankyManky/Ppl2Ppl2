@@ -6,24 +6,22 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
-import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.inject.Named;
+<<<<<<< HEAD
+=======
+import javax.faces.bean.RequestScoped;
+>>>>>>> parent of 5ed0a77... some changes - Donation: new View
 
-
-
-
-
-@Named
-@SessionScoped
+@ManagedBean
+@RequestScoped
 public class Registration {
 
 	@ManagedProperty(value = "#{idUser}")
 	private int idUser;
-//	@ManagedProperty(value = "#{preName}")
+	@ManagedProperty(value = "#{preName}")
 	private String preName;
-//	@ManagedProperty(value = "#{name}")
+	@ManagedProperty(value = "#{name}")
 	private String name;
 	@ManagedProperty(value = "#{mail}")
 	private String mail;
