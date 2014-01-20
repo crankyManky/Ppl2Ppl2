@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<faces-config
+<faces-config>
     xmlns="http://java.sun.com/xml/ns/javaee"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
-<<<<<<< HEAD
-    version="2.1">
+
     
-  <!--   <managed-bean>
+    <managed-bean>
 	  <managed-bean-name>registration</managed-bean-name>
 	  <managed-bean-class>com.example.ppl2ppl.Registration</managed-bean-class>
 	  <managed-bean-scope>request</managed-bean-scope>
-    </managed-bean> -->
-=======
-    version="2.1"> 
->>>>>>> af55667076aae69bb358ee7794e9118c22aaba02
+    </managed-bean> 
+
 
 </faces-config>
