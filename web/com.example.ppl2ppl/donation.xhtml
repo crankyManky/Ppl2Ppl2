@@ -2,40 +2,44 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-xmlns:h="http://xmlns.jcp.org/jsf/html"
-xmlns:f="http://xmlns.jcp.org/jsf/core">
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
-<title>Donation</title>
+	<title>Donation</title>
 </h:head>
 <h:body>
-<h:form>
+	<h:form>
 	Please put your amount in!
 	<br />
-	<br />
-	<h:panelGrid columns="2" columnClasses="rightAlign, leftAlign">
-			<h:outputText value="amount: "> </h:outputText>
+		<br />
+		<h:panelGrid columns="2" columnClasses="rightAlign, leftAlign">
+			<h:outputText value="amount: ">
+			</h:outputText>
 			<h:inputText id="amountText" value="#{donation.amount}"
-			converterMessage="Your amount must be a number." showSummary="true" />
+				converterMessage="Your amount must be a number." showSummary="true" />
+			<br />
+		</h:panelGrid>
+		<h:outputText
+			value="Choose how you would like to divide up your donation"
+			align="center">
+		</h:outputText>
 		<br />
-	</h:panelGrid>
-		<h:outputText value="Choose how you would like to divide up your donation" align="center"> </h:outputText>
 		<br />
-		<br />
-	<h:panelGrid columns="2" columnClasses="rightAlign, leftAlign">	
-		<h:selectOneRadio value="#{donation.oneProject}">
-   			<f:selectItem itemValue="one" itemLabel="single project" />
-   		</h:selectOneRadio>
-   		<h:selectOneRadio value="#{donation.splitDonation}">
-   			<f:selectItem itemValue="more" itemLabel="split donation" />
-   		</h:selectOneRadio>
-   		<br />
-   </h:panelGrid>
-   		
-   		
-   		
-			
+		<h:panelGrid columns="2" columnClasses="rightAlign, leftAlign">
+			<h:selectOneRadio value="#{donation.oneProject}">
+				<f:selectItem itemValue="one" itemLabel="single project" />
+			</h:selectOneRadio>
+			<h:selectOneRadio value="#{donation.splitDonation}">
+				<f:selectItem itemValue="more" itemLabel="split donation" />
+			</h:selectOneRadio>
+			<br />
+		</h:panelGrid>
 
-</h:form>
+
+
+
+
+	</h:form>
 </h:body>
 </html>
