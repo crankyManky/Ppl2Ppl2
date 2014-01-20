@@ -3,6 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+<<<<<<< HEAD
 	xmlns:h="http://xmlns.jcp.org/jsf/html">
 
 <!-- <h:head>
@@ -104,37 +105,55 @@ xmlns:f="http://xmlns.jcp.org/jsf/core">
 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 xmlns:h="http://xmlns.jcp.org/jsf/html"
 xmlns:f="http://xmlns.jcp.org/jsf/core">
+=======
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+>>>>>>> 48e9de1ac078300d7c53143860a27ce73d8121db
 <h:head>
-<title>Donation</title>
+	<title>Donation</title>
 </h:head>
 <h:body>
-<h:form>
+
+	<!--  <h:form>
+	<p:panelGrid style="margin-top:20px" columns="2">
+		<f:facet name="header">
+			Make your donation!
+		</f:facet>
+		<p:row>
+			<h:outputText value="Amount: " /> -->
+
+	<h:form>
 	Please put your amount in!
 	<br />
-	<br />
-	<h:panelGrid columns="2" columnClasses="rightAlign, leftAlign">
-			<h:outputText value="amount: "> </h:outputText>
+		<br />
+		<h:panelGrid columns="2" columnClasses="rightAlign, leftAlign">
+			<h:outputText value="amount: ">
+			</h:outputText>
 			<h:inputText id="amountText" value="#{donation.amount}"
-			converterMessage="Your amount must be a number." showSummary="true" />
+				converterMessage="Your amount must be a number." showSummary="true" />
+			<br />
+		</h:panelGrid>
+		<h:outputText
+			value="Choose how you would like to divide up your donation"
+			align="center">
+		</h:outputText>
 		<br />
-	</h:panelGrid>
-		<h:outputText value="Choose how you would like to divide up your donation" align="center"> </h:outputText>
 		<br />
-		<br />
-	<h:panelGrid columns="2" columnClasses="rightAlign, leftAlign">	
-		<h:selectOneRadio value="#{donation.oneProject}">
-   			<f:selectItem itemValue="one" itemLabel="single project" />
-   		</h:selectOneRadio>
-   		<h:selectOneRadio value="#{donation.splitDonation}">
-   			<f:selectItem itemValue="more" itemLabel="split donation" />
-   		</h:selectOneRadio>
-   		<br />
-   </h:panelGrid>
-   		
-   		
-   		
-			
+		<h:panelGrid columns="2" columnClasses="rightAlign, leftAlign">
 
+			<h:selectOneRadio value="#{donation.oneOrSplit}" required="true"
+				requiredMessage="Please choose if you want to donate to one single project or split your donation"
+				onClick="buttonChanged()">
+				<f:selectItem itemValue="0" itemLabel="single project" id="single" />
+				<f:selectItem itemValue="1" itemLabel="split donation" id="multiple" />
+			</h:selectOneRadio>
+			<br />
+		</h:panelGrid>
+		<h:commandButton id="donateButton" action="{thanks}" value="Donate"
+			align="center" />
+
+<<<<<<< HEAD
 </h:form>
 >>>>>>> parent of af55667... about page fixed, tried to implement primefaces
 =======
@@ -142,5 +161,8 @@ xmlns:f="http://xmlns.jcp.org/jsf/core">
 >>>>>>> parent of 5ed0a77... some changes - Donation: new View
 </h:form>
 >>>>>>> parent of af55667... about page fixed, tried to implement primefaces
+=======
+	</h:form>
+>>>>>>> 48e9de1ac078300d7c53143860a27ce73d8121db
 </h:body>
 </html>
