@@ -11,7 +11,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 
 
-@ManagedBean
+@ManagedBean(name="registration")
 @RequestScoped
 public class Registration {
 
