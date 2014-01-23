@@ -6,11 +6,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
 
 
-@ManagedBean
+@ManagedBean(name="login")
+@SessionScoped
 public class Login {
 
 	final String userName = "Peter";
