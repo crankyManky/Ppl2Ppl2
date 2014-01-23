@@ -25,7 +25,7 @@
 		for ( var i = 0; i < myArray.length; i++) {
 		    //  jedes element als key-var in localstorage speichern 
 		    localStorage.setItem(i, myArray[i]);
-		    alert(localStorage.getItem(i));
+		    $("body").append(localStorage.getItem(i));
 		}
 	    });
 	});
