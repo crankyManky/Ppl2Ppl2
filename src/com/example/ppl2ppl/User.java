@@ -1,4 +1,8 @@
 package com.example.ppl2ppl;
+
+import javax.faces.bean.RequestScoped;
+import javax.inject.Named;
+
 /*
  * This class represent a User
  */

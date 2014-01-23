@@ -21,12 +21,12 @@
 			<h:inputText id="nameText" value="#{login.dbUserName}" />
 			<br />
 			<h:outputText value="password: "></h:outputText>
-			<h:inputText id="passwordText" value="#{login.dbPassword}" />
+			<h:inputSecret id="passwordText" value="#{login.dbPassword}" />
 			<br />
 			<br />
 		</h:panelGrid>
 		<br />
-		<h:commandButton action="#{login.checkUser}" value="Submit" />
+		<h:commandButton action="#{login.databaseQuery}" value="Submit" />
 	</h:form>
 </h:body>
 </html>
