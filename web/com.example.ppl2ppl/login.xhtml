@@ -18,15 +18,15 @@
 			<br />
 			<h:panelGrid columns="3" columnClasses="rightAlign, leftAlign">
 			<h:outputText value="name: "></h:outputText>
-			<h:inputText id="nameText" value="#{login.dbUserName}" />
+			<h:inputText id="nameText" value="#{user.name}" />
 			<br />
 			<h:outputText value="password: "></h:outputText>
-			<h:inputSecret id="passwordText" value="#{login.dbPassword}" />
+			<h:inputSecret id="passwordText" value="#{user.password}" />
 			<br />
 			<br />
 		</h:panelGrid>
 		<br />
-		<h:commandButton action="#{login.databaseQuery}" value="Submit" />
+		<h:commandButton action="#{user.login}" value="Submit" />
 	</h:form>
 </h:body>
 </html>

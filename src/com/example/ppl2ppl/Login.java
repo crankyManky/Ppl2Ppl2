@@ -7,29 +7,34 @@ import java.sql.Statement;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 
 
 
 @ManagedBean(name="login")
-@SessionScoped
+//@SessionScoped
+@RequestScoped
 public class Login {
 
 	final String userName = "Peter";
 	private String password;
 	ResultSet rsName = null;
 	ResultSet rsPW = null;
+	@ManagedProperty(value = "#{dbUserName}")
 	private String dbUserName;
+	@ManagedProperty(value = "#{dbPasword}")
 	private String dbPassword;
 	private String dbRole;
 	private String outputMsg;
 	
 	Statement statement = null;
 	ResultSet result = null;
+	Connection connect;
 	
 	public String databaseQuery(){
 		
-		Connection connect = null;
+		connect = null;
 		try {
 			System.out.println("Im Try-Block");
 			Class.forName("com.mysql.jdbc.Driver");
