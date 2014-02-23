@@ -1,62 +1,56 @@
 #head {
+	
 }
 
 #searchbar {
-	 float:right; 
-	 position: absolute;
-	 margin-top: 50px; 
-	 margin-left: 740px;	
+	
 }
 
-ul  { 
+ul {
 	display: inline;
 	list-style-type: none;
 	float: left;
-	width:400px; 
-	height:100%; 
-	padding-right:20px; 
-	border:0px; 
-	background-color: white; 
-	}
-	
+	width: 400px;
+	height: 100%;
+	padding-right: 20px;
+	border: 0px;
+	background-color: white;
+}
+
 li {
 	display: inline;
 }
 
-
 #iFrames {
-	widht:100%
+	width: 100%
 }
 
 #leftIFrame {
-	position:  absolute;
+	position: absolute;
 	margin-top: 150px;
 	margin-left: 150px;
-	width:600px;
-	height: 500px;
+	width: 600px;
+	height: 430px;
 	scrolling: yes;
-	
 }
 
 #rightIFrame {
 	position: absolute;
 	margin-top: 150px;
-	margin-left: 800px ;
-	width:300px;
-	height: 500px;
+	margin-left: 800px;
+	width: 300px;
+	height: 430px;
 	overflow: hidden;
 	scrolling: yes;
-	
 }
 
-
-#tabNavi{
-	 background-color: #ECF3EE;        /* Hintergrundfarbe für die Navigation */
- 	 padding: 5px 0;                   /* Innenabstand: oben/unten 4px, li/re 0 */
- 	 border-top: 3px solid #9B5D2E;    /* Rahmenlinie oben */
- 	 border-bottom: 3px solid #9B5D2E; /* Rahmenlinie unten */
- 	 border: 2px groove #9B5D2E;
- 	 margin: 0; 
+#tabNavi {
+	background-color: #ECF3EE; 
+	padding: 5px 0; 
+	border-top: 3px solid #9B5D2E; 
+	border-bottom: 3px solid #9B5D2E; 
+	border: 2px groove #9B5D2E;
+	margin: 0;
 }
 
 .menuLeft {
@@ -66,16 +60,16 @@ li {
 	width: 400px;
 }
 
-
 .content {
 	background-color: brown;
 	margin-left: 400px;
 }
 
-#contentLeft{
-	position:relative;
+#contentLeft {
+	position: relative;
 	margin: 10px;
 	top: 50px;
+	padding-bottom: 2em;
 }
 
 #rightSide {
@@ -88,19 +82,22 @@ li {
 }
 
 #footer {
-    position: absolute;
-    margin-top:  660px;
-    margin-left:  150px;
-    clear:left;
-    background:#efefef;
-    bottom:0px;
-    padding:0px;
-    width:600px;
-    text-align: center;
+	position: absolute;
+	margin-top: 660px;
+	margin-left: 150px;
+	clear: left;
+	background: #efefef;
+	bottom: 12px;
+	padding: 0px;
+	width: 600px;
+	text-align: center;
+}
+
+.grid{
+	width: 100%;
+	text-color: red;
 }
 
 body {
 	background-color: white;
 }
-
-	

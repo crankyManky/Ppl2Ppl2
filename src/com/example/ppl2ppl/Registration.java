@@ -10,8 +10,12 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 
-
-@ManagedBean(name="registration")
+/**
+ * This Class handles the registration of a user.
+ * @author Julia Bergmayr & Patricia Mankowski
+ *
+ */
+@ManagedBean(name = "registration")
 @RequestScoped
 public class Registration {
 
@@ -36,34 +40,29 @@ public class Registration {
 	@ManagedProperty(value = "#{regDate}")
 	private Date regDate;
 
-	
-
 	/**
 	 * This method adds the data into the database
+	 * 
 	 * @return
 	 */
 	public String sendInfosToDB() {
-		System.out.println("bin ich drin?");
 
 		Date regDate = new Date(System.currentTimeMillis());
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 		int i = 0;
-		System.out.println(dateFormat);
 
 		if (idUser == 0) {
 			PreparedStatement ps = null;
 			Connection connect = null;
 			try {
-				System.out.println("Im Try-Block");
 				Class.forName("com.mysql.jdbc.Driver");
 			} catch (ClassNotFoundException e) {
-				System.out.println("No Driver-Class!");
 				return ("No Driver-Class!");
 			}
 			try {
 				connect = DriverManager.getConnection(
 						"jdbc:mysql://localhost:3306/ppl2ppldb", "root",
-						"admin");																	//regDate?
+						"admin"); // regDate?
 				String sql = "INSERT INTO user(idUser, prename, name, mail, password, street, zip, city, country, regDate) VALUES(?,?,?,?,?,?,?,?,?,?)";
 				ps = connect.prepareStatement(sql);
 				ps.setInt(1, idUser);
@@ -75,16 +74,16 @@ public class Registration {
 				ps.setString(7, zip);
 				ps.setString(8, city);
 				ps.setString(9, country);
-				System.out.println("pushe");
-					String date = dateFormat.format(regDate);
-					if (date.isEmpty()) {
-						ps.setDate(10, null);
-					} else {
-						ps.setDate(10, regDate);
-					}
+				String date = dateFormat.format(regDate);
+				if (date.isEmpty()) {
+					ps.setDate(10, null);
+				} else {
+					ps.setDate(10, regDate);
+				}
 
 				i = ps.executeUpdate();
 				System.out.println("Data added Successfully");
+				return "../com.example.ppl2ppl/login.xhtml";
 			} catch (Exception e) {
 				System.out.println(e);
 			} finally {
@@ -104,7 +103,7 @@ public class Registration {
 			return "invalid";
 		}
 	}
-	
+
 	/**
 	 * @return idUser
 	 */
@@ -258,6 +257,7 @@ public class Registration {
 
 	/**
 	 * This method sets the regDate
+	 * 
 	 * @param regDate
 	 */
 	public void setRegDate(Date regDate) {

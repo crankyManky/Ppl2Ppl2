@@ -4,65 +4,92 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
-import javax.inject.Named;
+import javax.faces.bean.SessionScoped;
 
-/*
- * This class represent a User
+/**
+ * This class represents a user and the function login
+ * @author Julia Bergmayr & Patricia Mankowski
  */
-@ManagedBean(name="user")
-@RequestScoped
+@ManagedBean(name = "user")
+@SessionScoped
 public class User {
+
+	public User() {
+	}
+
+	public User(String name, String password) {
+		this.name = name;
+		this.password = password;
+	}
 
 	private String name;
 	private String password;
 	ResultSet rsName = null;
-	ResultSet rsPW = null;
-	
-	private String dbRole;
-	private String outputMsg;
-	private String dbUserName;
-	
 
 	Statement statement = null;
 	ResultSet result = null;
 	Connection connect;
+	User nUser;
+	String outputMessage;
+	
 
+	List<User> users = new ArrayList<User>();
+
+	/**
+	 * This method checks if the user is registered and handle the user
+	 * according to this
+	 * 
+	 * @return
+	 */
 	public String login() {
 
 		connect = null;
 
 		try {
-			System.out.println("Im Try-Block");
 			Class.forName("com.mysql.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
-			System.out.println("No Driver-Class!");
 			return ("No Driver-Class!");
 		}
 		try {
 			connect = DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/ppl2ppldb", "root", "admin");
-			String sqlQueryName = "SELECT * FROM user(name)";
-			String sqlQueryPW = "SELECT * FROM user(password)";
-			System.out.println("Hier bin ich? Vor rsNAME?");
-			rsName = statement.executeQuery(sqlQueryName);
-			rsPW = statement.executeQuery(sqlQueryPW);
-			if (name.equals(sqlQueryName) && password.equals(sqlQueryPW)) {
-				outputMsg = "Hej hej " + name;
+			statement = connect.createStatement();
+			String sqlQueryName = "SELECT * FROM user";
+
+			result = statement.executeQuery(sqlQueryName);
+			result.first();
+			while (!result.isAfterLast()) {
+				String name = result.getString("name");
+				String pw = result.getString("password");
+
+				nUser = new User(name, pw);
+				users.add(nUser);
+				result.next();
+			}
+			if (name.equals(nUser.name) && password.equals(nUser.password)) {
+				System.out.println("if-else - should go to the next page");
+				return "../com.example.ppl2ppl/LoginSuccessed.xhtml";
+			} else {
+				System.out.println("Inputs are wrong! Please try again.");
+				outputMessage = "Your inputs are wrong. If you really registered - try again!";
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return ("Bla");
-//		// Image here a database access to validate the users
-//		if (name.equalsIgnoreCase("tester")
-//				&& password.equalsIgnoreCase("tester")) {
-//			return "success";
-//		} else {
-//			return "failed";
-//		}
+	}
+	
+	/**
+	 * This method need a user to logout himself
+	 * @return
+	 */
+	public String logout() {
+		
+		return "I need a logout!";
 	}
 
 	/**
@@ -96,11 +123,4 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-	/**
-	 * This method is unused maybe
-	 * 
-	 * @return
-	 */
-
 }

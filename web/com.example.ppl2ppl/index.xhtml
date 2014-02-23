@@ -7,49 +7,49 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-	<h:head>
-		<title>People 2 People</title>
-	
-		<!-- jQuery library (served from Google) -->
-		<script
-			src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-		
-		<!-- bxSlider Javascript file -->
-		<script src="../slider/jquery.bxslider.min.js"></script>
-		<!-- bxSlider CSS file -->
-		<link href="../slider/jquery.bxslider.css" rel="stylesheet" />
+<h:head>
+	<title>People 2 People</title>
 
-		<!-- external stylesheet -->
-		<link href="../style/stylesheet.css" type="text/css" rel="Stylesheet" />
-		
-		<script type="text/javaScript">
+	<!-- jQuery library (served from Google) -->
+	<script
+		src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 
-			function changeLeft(loc){
-    			document.getElementById('leftIFrame').src = loc;
-			}
+	<!-- bxSlider Javascript file -->
+	<script src="../slider/jquery.bxslider.min.js"></script>
+	<!-- bxSlider CSS file -->
+	<link href="../slider/jquery.bxslider.css" rel="stylesheet" />
 
-			function changeRight(loc){
-				document.getElementById('rightIFrame').src = loc;
-			}
-		</script>
-	</h:head>
-	<h:body>
+	<!-- external stylesheet -->
+	<link href="../style/stylesheet.css" type="text/css" rel="Stylesheet" />
 
-		<!--  upper part -->
-	<a href="index.html"><img src="../images/LogoP2P.png" width="200"
-			height="80" alt="logo" style="margin-top: 20px; margin-left: 150px; position: absolute;"></img></a>
-	
-		<form method="post" action="" id="searchbar">
-			<input class="textfield" type="text" name="searchString" size="35"
-				maxlength="30" /> <input class="button" type="submit"
-				name="startSearch" value="search" />
-		</form>
-	
-		<div class="menuLeft">
+	<script type="text/javaScript">
+		function changeLeft(loc) {
+			document.getElementById('leftIFrame').src = loc;
+		}
+
+		function changeRight(loc) {
+			document.getElementById('rightIFrame').src = loc;
+		}
+	</script>
+</h:head>
+<h:body>
+
+	<!--  upper part -->
+	<a href="index.xhtml"><img src="../images/LogoP2P.png" width="200"
+		height="75" alt="logo"
+		style="margin-top: 20px; margin-left: 150px; position: absolute;"></img></a>
+
+	<form method="post" action="" id="searchbar" style="margin-top: 78px; margin-left: 796px; position: absolute;">
+		<input class="textfield" type="text" name="searchString" size="35"
+			maxlength="30" /> 
+		<input class="button" type="submit" name="startSearch" value="search" />
+	</form>
+
+	<div class="menuLeft">
 		<ul class="tabs" id="tabNavi">
-			
+
 			<li class="active">
-			<a href="#" onclick="changeLeft('home.xhtml')">Home</a></li>	
+			<a href="#" onclick="changeLeft('home.xhtml')">Home</a></li>
 			<span class="linkDivider"> | </span>
 			<li><a href="#" onclick="changeLeft('projects.xhtml')">Projects</a></li>
 			<span class="linkDivider"> | </span>
@@ -60,25 +60,26 @@
 			<li><a href="#" onclick="changeLeft('account.xhtml')">Account</a></li>
 		</ul>
 	</div>
-		<h:form id="iFrames">
+	<h:form id="iFrames">
 		<!-- Left side -->
-			<iframe src="home.xhtml" id="leftIFrame" name="leftIFrame">
-				<p>No i-frame possible with this browser</p>
-			</iframe>
-		
+		<iframe src="home.xhtml" id="leftIFrame" name="leftIFrame">
+			<p>No i-frame possible with this browser</p>
+		</iframe>
+
+
 		<!-- Right side -->
-			<iframe src="donation.xhtml" id="rightIFrame" name="rightIFrame">
-				<p>No i-frame possible with this browser</p>
-			</iframe>
-		</h:form> 
+		<iframe src="donation.xhtml" id="rightIFrame" name="rightIFrame">
+			<p>No i-frame possible with this browser</p>
+		</iframe>
+	</h:form>
 
-		<footer id="footer">
-			<a href="">Imprint</a>  
-			<span class="linkDivider"> | </span> 
-			<a href="../com.example.ppl2ppl/contact.xhtml">Contact</a>  
-			<span class="linkDivider"> | </span> 
-			<a href="">Log In</a>
-		</footer>
+	<footer id="footer"> <a
+		href="../com.example.ppl2ppl/imprint.xhtml" target="leftIFrame">Imprint</a>
+		<span class="linkDivider"> | </span> <a
+		href="../com.example.ppl2ppl/contact.xhtml" target="leftIFrame">Contact</a>
+		<span class="linkDivider"> | </span> <a
+		href="../com.example.ppl2ppl/login.xhtml" target="leftIFrame">LogIn</a>
+	 </footer>
 
-	</h:body>
+</h:body>
 </html>
