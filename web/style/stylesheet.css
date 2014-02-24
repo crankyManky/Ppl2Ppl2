@@ -87,15 +87,10 @@ li {
 	margin-left: 150px;
 	clear: left;
 	background: #efefef;
-	bottom: 12px;
+	bottom: 2px;
 	padding: 0px;
 	width: 600px;
 	text-align: center;
-}
-
-.grid{
-	width: 100%;
-	text-color: red;
 }
 
 body {

@@ -3,12 +3,14 @@ package com.example.ppl2ppl;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.event.ActionEvent;
 
 /**
  * This class represents a user and the function login
@@ -35,6 +37,7 @@ public class User {
 	Connection connect;
 	User nUser;
 	String outputMessage;
+	String buttonID;
 	
 
 	List<User> users = new ArrayList<User>();
@@ -45,7 +48,9 @@ public class User {
 	 * 
 	 * @return
 	 */
-	public String login() {
+	public String login(ActionEvent action) {
+		
+		buttonID = action.getComponent().getClientId();
 
 		connect = null;
 
@@ -76,6 +81,7 @@ public class User {
 			} else {
 				System.out.println("Inputs are wrong! Please try again.");
 				outputMessage = "Your inputs are wrong. If you really registered - try again!";
+				return "blöd";
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -87,7 +93,14 @@ public class User {
 	 * This method need a user to logout himself
 	 * @return
 	 */
-	public String logout() {
+	public String logout(ActionEvent action) {
+		
+		try {
+			connect.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		return "I need a logout!";
 	}
@@ -123,4 +136,21 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	/**
+	 * @return outputMessage
+	 */
+	public String getOutputMessage() {
+		return outputMessage;
+	}
+
+	/**
+	 * This method sets the outputMessage
+	 * 
+	 * @param outputMessage
+	 */
+	public void setOutputMessage(String outputMessage) {
+		this.outputMessage = outputMessage;
+	}
+
 }

@@ -26,8 +26,10 @@
 			<br />
 		</h:panelGrid>
 		<br />
-		<h:commandButton action="#{user.login}" value="Submit" />
-		<h:outputLink value="../com.example.ppl2ppl/LoginSuccessed.xhtml"></h:outputLink>
+		<h:commandButton action="LoginSuccessed" value="Submit" actionListener="#{user.login}"/>
+		<br></br>
+		<h:outputText value="#{user.outputMessage}"/>
+
 	</h:form>
 </h:body>
 </html>
